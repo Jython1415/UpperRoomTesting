@@ -1,0 +1,37 @@
+{
+    "urlStem":"https://jython1415.github.io/UpperRoomTesting/",
+    "devotionStem":"",
+    "publicationStem":"",
+
+    "devotionFiles": [
+        {
+            "url":"2022-07.txt",
+            "month":7,
+            "year":2022,
+            "fileSize":72
+        },
+        {
+            "url":"2022-08.txt",
+            "month":8,
+            "year":2022,
+            "fileSize":71
+        }
+    ],
+
+    "publicationFiles": [
+        {
+            "url":"2022-0506.pdf",
+            "imgURL":"",
+            "startMonth":5,
+            "year":2022,
+            "fileSize":1350
+        },
+        {
+            "url":"2022-0708.pdf",
+            "imgURL":"",
+            "startMonth":7,
+            "year":2022,
+            "fileSize":1400
+        }
+    ]
+}
