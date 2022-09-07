@@ -8,19 +8,22 @@
             "url":"2022-07.txt",
             "month":7,
             "year":2022,
-            "fileSize":72
+            "fileSize":72,
+            "imgNum": 1
         },
         {
             "url":"2022-08.txt",
             "month":8,
             "year":2022,
-            "fileSize":71
+            "fileSize":71,
+            "imgNum": 2
         },
         {
             "url":"2022-09.txt",
             "month":9,
             "year":2022,
-            "fileSize":70
+            "fileSize":70,
+            "imgNum": 3
         }
     ],
 
