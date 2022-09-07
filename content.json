@@ -15,6 +15,12 @@
             "month":8,
             "year":2022,
             "fileSize":71
+        },
+        {
+            "url":"2022-09.txt",
+            "month":9,
+            "year":2022,
+            "fileSize":70
         }
     ],
 
@@ -34,6 +40,14 @@
             "startMonth":7,
             "year":2022,
             "fileSize":1400
+        },
+        {
+            "url":"2022-0910.pdf",
+            "title":"9・10月号 No.431",
+            "imgURL":"",
+            "startMonth":9,
+            "year":2022,
+            "fileSize":2007
         }
     ]
 }
