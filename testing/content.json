@@ -1,0 +1,53 @@
+{
+    "urlStem":"https://jython1415.github.io/UpperRoomTesting/",
+    "devotionStem":"",
+    "publicationStem":"",
+
+    "devotionFiles": [
+        {
+            "url":"2022-07.txt",
+            "month":7,
+            "year":2022,
+            "fileSize":72
+        },
+        {
+            "url":"2022-08.txt",
+            "month":8,
+            "year":2022,
+            "fileSize":71
+        },
+        {
+            "url":"2022-09.txt",
+            "month":9,
+            "year":2022,
+            "fileSize":70
+        }
+    ],
+
+    "publicationFiles": [
+        {
+            "url":"2022-0506.pdf",
+            "title":"5・6月号 No.429",
+            "imgURL":"",
+            "startMonth":5,
+            "year":2022,
+            "fileSize":1350
+        },
+        {
+            "url":"2022-0708.pdf",
+            "title":"7・8月号 No.430",
+            "imgURL":"",
+            "startMonth":7,
+            "year":2022,
+            "fileSize":1400
+        },
+        {
+            "url":"2022-0910.pdf",
+            "title":"9・10月号 No.431",
+            "imgURL":"",
+            "startMonth":9,
+            "year":2022,
+            "fileSize":2007
+        }
+    ]
+}
