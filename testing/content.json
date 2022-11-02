@@ -8,19 +8,31 @@
             "url":"2022-07.txt",
             "month":7,
             "year":2022,
-            "fileSize":72
+            "fileSize":73102
         },
         {
             "url":"2022-08.txt",
             "month":8,
             "year":2022,
-            "fileSize":71
+            "fileSize":72279
         },
         {
             "url":"2022-09.txt",
             "month":9,
             "year":2022,
-            "fileSize":70
+            "fileSize":69586
+        },
+        {
+            "url":"2022-10.txt",
+            "month":10,
+            "year":2022,
+            "fileSize":72233
+        },
+        {
+            "url":"2022-11.txt",
+            "month":11,
+            "year":2022,
+            "fileSize":69026 
         }
     ],
 
@@ -31,7 +43,7 @@
             "imgURL":"",
             "startMonth":5,
             "year":2022,
-            "fileSize":1350
+            "fileSize":1414885
         },
         {
             "url":"2022-0708.pdf",
@@ -39,7 +51,7 @@
             "imgURL":"",
             "startMonth":7,
             "year":2022,
-            "fileSize":1400
+            "fileSize":1467882
         },
         {
             "url":"2022-0910.pdf",
@@ -47,7 +59,15 @@
             "imgURL":"",
             "startMonth":9,
             "year":2022,
-            "fileSize":2007
+            "fileSize":2007079
+        },
+        {
+            "url":"2022-1112.pdf",
+            "title":"11・12月号 No.432",
+            "imgURL":"",
+            "startMonth":11,
+            "year":2022,
+            "fileSize":2117794
         }
     ]
 }
