@@ -5,28 +5,34 @@
 
     "devotionFiles": [
         {
-            "url":"2022-07.txt",
+            "url":"2022-07.json",
             "month":7,
             "year":2022,
-            "fileSize":72
+            "fileSize":81751
         },
         {
-            "url":"2022-08.txt",
+            "url":"2022-08.json",
             "month":8,
             "year":2022,
-            "fileSize":71
+            "fileSize":81115
         },
         {
-            "url":"2022-09.txt",
+            "url":"2022-09.json",
             "month":9,
             "year":2022,
-            "fileSize":70
+            "fileSize":77956
         },
         {
-            "url":"2022-10.txt",
+            "url":"2022-10.json",
             "month":10,
             "year":2022,
-            "fileSize":72
+            "fileSize":80698
+        },
+        {
+            "url":"2022-11.json",
+            "month":11,
+            "year":2022,
+            "fileSize":77218
         }
     ],
 
