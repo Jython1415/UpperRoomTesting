@@ -1,19 +1,8 @@
-# 00: Date
-# 01: JapaneseDate
-# 02: Title
-# 03: BibleReading
-# 04: BiblePassage
-# 05: BibleText
-# 06: DevotionText
-# 07: Prayer
-# 08: Thought
-# 09: PrayerFocus
-# 10: Author
-
 import os
 import unicodedata
 from datetime import datetime
 import time
+import json
 
 # Characters to remove
 characterBlacklist = ['　', '\n', '\r', ' ', u"\u000A", u"\u0009", u"\u2424", u"\u000D", u"\u23CE", u"\u240D", u"\u2B90", u"\u2B91", u"\u2B92", u"\u2B93", u"\u4DD7", u"\u0008", u"\u0020", u"\u00A0", u"\u1361", u"\u1680", u"\u2000", u"\u2002", u"\u2003", u"\u2004", u"\u2005", u"\u2006", u"\u2007", u"\u2008", u"\u2009", u"\u200A", u"\u200B", u"\u202F", u"\u205F", u"\u3000", u"\uFEFF", unicodedata.lookup("SPACE"), '\t']
@@ -23,19 +12,7 @@ allDevotions = []
 
 # Devotion class
 class Devotion:
-    # def __init__(self):
-    #     self.date = ""
-    #     self.japaneseDate = ""
-    #     self.title = ""
-    #     self.bibleReading = ""
-    #     self.biblePassage = ""
-    #     self.bibleText = ""
-    #     self.devotionText = ""
-    #     self.prayer = ""
-    #     self.thought = ""
-    #     self.prayerFocus = ""
-    #     self.author = ""
-        
+    
     def __init__(self, date, japaneseDate, title, bibleReading, biblePassage, bibleText, devotionText, prayer, thought, prayerFocus, author):
         self.date = date
         self.japaneseDate = japaneseDate
@@ -48,6 +25,20 @@ class Devotion:
         self.thought = thought
         self.prayerFocus = prayerFocus
         self.author = author
+        
+        self.dict = {
+            "date": date,
+            "japaneseDate": japaneseDate,
+            "title": title,
+            "bibleReading": bibleReading,
+            "biblePassage": biblePassage,
+            "bibleText": bibleText,
+            "devotionText": devotionText,
+            "prayer": prayer,
+            "thought": thought,
+            "prayerFocus": prayerFocus,
+            "author": author
+        }
 
 # Main function ###################################################################################
 def main():
@@ -59,7 +50,7 @@ def main():
     elif userSelection == "2":
         validateInputTextFile()
     elif userSelection == "3":
-        generateDevotionDataFromInput()
+        generateOldDevotionDataFromInput()
 
 # Add leading zeros
 def withLeadingZeros(number, desiredNumOfDigits):
@@ -188,15 +179,8 @@ def validateInputTextFile():
     print(f"Validation completed in {round(endTime-startTime,5)} seconds")    
 
 # Generate devotion data from input ###############################################################
-def generateDevotionDataFromInput():
-    # Read the file contents
-    month = int(input("What month is this for?\nInput as number: "))
-    year = int(input("What year is it?\nInput as number: "))
-    fileName = getDraggablePath("What file do you want to process?")
-    folderPath = getDraggablePath("What folder should the results go into?")
-    
-    startTime = time.perf_counter()
-    
+# Creates and returns a list of  devotion objects from the input in the specified file
+def createDevotionObjectsFromInput(fileName):
     allDevotions = []
     
     file = open(fileName, "r")
@@ -230,12 +214,50 @@ def generateDevotionDataFromInput():
         devotion = Devotion(sections[0], sections[1], sections[2], sections[3], sections[4], sections[5], devotionText, sections[7], sections[8], sections[9], sections[10])
         allDevotions.append(devotion)
     
+    return allDevotions
+
+# Generates output in the old data format
+def generateOldDevotionDataFromInput():
+    # Read the file contents
+    month = int(input("What month is this for?\nInput as number: "))
+    year = int(input("What year is it?\nInput as number: "))
+    fileName = getDraggablePath("What file do you want to process?")
+    folderPath = getDraggablePath("What folder should the results go into?")
+    
+    startTime = time.perf_counter()
+    
+    allDevotions = createDevotionObjectsFromInput(fileName)
+
     # Add all data to a results file
     file = createTextFile(f"{year}-{withLeadingZeros(month,2)}", folderPath)
     for devotion in allDevotions:
         delim = '^'
         file.write(devotion.date + delim + devotion.japaneseDate + delim + devotion.title + delim + devotion.bibleReading + delim + devotion.biblePassage + delim + devotion.bibleText + delim + devotion.devotionText + delim + devotion.prayer + delim + devotion.thought + delim + devotion.prayerFocus + delim + devotion.author + "_")
     file.close()
+    
+    # Print validation message
+    endTime = time.perf_counter()
+    print(f"Output generated in {round(endTime-startTime,5)} seconds")
+
+# Generate json devotion data from input
+def generateJSONfromInput():
+    # Read the file contents
+    month = int(input("What month is this for?\nInput as number: "))
+    year = int(input("What year is it?\nInput as number: "))
+    fileName = getDraggablePath("What file do you want to process?")
+    folderPath = getDraggablePath("What folder should the results go into?")
+    
+    startTime = time.perf_counter()
+    
+    allDevotions = createDevotionObjectsFromInput(fileName)
+    
+    # Extract the dictionaries
+    listOfDicts = []
+    for devotion in allDevotions:
+        listOfDicts.append(devotion.dict)
+    
+    print(json.dumps(listOfDicts))
+    
 
 # Cleans a paragraph of text
 def cleanParagraph(paragraph):
