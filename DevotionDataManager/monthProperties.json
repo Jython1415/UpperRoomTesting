@@ -1,0 +1,29 @@
+{
+    "months": [
+        {
+            "year":"2022",
+            "month":"07",
+            "textBackgroundColor":"#f8eee3"
+        },
+        {
+            "year":"2022",
+            "month":"08",
+            "textBackgroundColor":"#f8eee3"
+        },
+        {
+            "year":"2022",
+            "month":"09",
+            "textBackgroundColor":"#eff1ea"
+        },
+        {
+            "year":"2022",
+            "month":"10",
+            "textBackgroundColor":"#eff1ea"
+        },
+        {
+            "year":"2022",
+            "month":"11",
+            "textBackgroundColor":"#e0e6ef"
+        }
+    ]
+}
