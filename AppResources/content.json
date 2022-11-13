@@ -1,7 +1,7 @@
 {
     "urlStem":"https://jython1415.github.io/UpperRoomTesting/",
-    "devotionStem":"",
-    "publicationStem":"",
+    "devotionStem":"AppResources/Devotion/",
+    "publicationStem":"AppResources/Publication/",
 
     "devotionFiles": [
         {
