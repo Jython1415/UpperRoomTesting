@@ -73,7 +73,7 @@ def getDraggablePath(message):
 # Creates a text file with the input name (and input location)
 def createTextFile(name, folderPath=""):
     fileName = folderPath + "/" + name + "_" + datetime.now().strftime("%H-%M-%S") + ".txt"
-    file = open(fileName, 'x')
+    file = open(fileName, 'x', encoding='utf8')
     
     return file
 
@@ -263,19 +263,23 @@ def generateJSONfromInput():
     for devotion in allDevotions:
         listOfDicts.append(devotion.dict)
     
-    print(json.dumps(listOfDicts))
+    # Output to JSON
+    # jsonOutput = json.dumps(listOfDicts, indent=4, ensure_ascii=False).encode('utf8')
     
+    # Add to result file
+    file = createTextFile(f"{year}-{withLeadingZeros(month,2)}", folderPath)
+    json.dump(listOfDicts, file, indent=4, ensure_ascii=False)
+    file.close()
+    
+    # Print validation message
+    endTime = time.perf_counter()
+    print(f"Output generated in {round(endTime-startTime,5)} seconds")
 
 # Cleans a paragraph of text
 def cleanParagraph(paragraph):
 	p = paragraph
 	for char in characterBlacklist:
 		p = p.replace(char, '')
-
-	# Print unicode names (to find characters to remove)
-	# for char in p:
-	# 	print(char)
-	# 	print(unicodedata.name(char))
 
 	return p
 
