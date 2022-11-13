@@ -307,12 +307,14 @@ def generateJSONfromInput():
     for devotion in allDevotions:
         listOfDicts.append(devotion.dict)
     
-    # Output to JSON
-    # jsonOutput = json.dumps(listOfDicts, indent=4, ensure_ascii=False).encode('utf8')
+    # Add list to dictionary
+    jsonInput = {
+        "devotions": listOfDicts
+    }
     
     # Add to result file
     file = createJSONFile(f"{year}-{withLeadingZeros(month,2)}", folderPath)
-    json.dump(listOfDicts, file, indent=4, ensure_ascii=False)
+    json.dump(jsonInput, file, indent=4, ensure_ascii=False)
     file.close()
     
     # Print validation message
