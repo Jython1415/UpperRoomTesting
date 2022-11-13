@@ -47,17 +47,54 @@ def main():
     
     if userSelection == "1":
         createTemplateTextFile()
+        
+        # Home or finish
+        print("0 Home\n1 Finish")
+        userSelection = input("Select: ")
+        if userSelection == "0":
+            main()
+        elif userSelection == "1":
+            print("Done")
+            
     elif userSelection == "2":
         validateInputTextFile()
+        
+                # Home or finish
+        print("0 Home\n1 Finish")
+        userSelection = input("Select: ")
+        if userSelection == "0":
+            main()
+        elif userSelection == "1":
+            print("Done")
+            
     elif userSelection == "3":
         print("\n3.0 Back\n3.1 JSON Output\n3.2 Old Output (deprecated)")
         userSelection = input("Select: ")
+        
         if userSelection == "0" or userSelection == "3.0":
             main()
+            
         elif userSelection == "1" or userSelection == "3.1":
             generateJSONfromInput()
+            
+            # Home or finish
+            print("0 Home\n1 Finish")
+            userSelection = input("Select: ")
+            if userSelection == "0":
+                main()
+            elif userSelection == "1":
+                print("Done")
+                
         elif userSelection == "2" or userSelection == "3.2":
             generateOldDevotionDataFromInput()
+            
+            # Home or finish
+            print("0 Home\n1 Finish")
+            userSelection = input("Select: ")
+            if userSelection == "0":
+                main()
+            elif userSelection == "1":
+                print("Done")
 
 # Add leading zeros
 def withLeadingZeros(number, desiredNumOfDigits):
