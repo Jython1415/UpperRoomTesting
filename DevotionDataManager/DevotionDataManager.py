@@ -39,7 +39,7 @@ class Devotion:
 
 # Main function ###################################################################################
 def main():
-    print("\n0 Cancel\n1 Create template text file\n2 Validate input text file\n3 Generate devotion data from input")
+    print("\n0 Cancel\n1 Create template text file\n2 Validate input text file\n3 Generate devotion data from input\n4 JSON editing")
     userSelection = input("Select: ")
     
     if userSelection == "1":
@@ -92,6 +92,23 @@ def main():
                 main()
             elif userSelection == "1":
                 print("Done")
+    
+    elif userSelection == "4":
+        print("\n4.0 Back\n4.1 Add color to JSON file")
+        userSelection = input("Select: ")
+        
+        if userSelection == "0" or userSelection == "4.0":
+            main()
+        elif userSelection == "1" or userSelection == "4.1":
+            addColorToJSONfile()
+            
+            # Home or finish
+            print("0 Home\n1 Finish")
+            userSelection = input("Select: ")
+            if userSelection == "0":
+                main()
+            elif userSelection == "1":
+                print("Done")
 
 # Add leading zeros
 def withLeadingZeros(number, desiredNumOfDigits):
@@ -117,6 +134,14 @@ def createJSONFile(name, folderPath=""):
     file = open(fileName, 'x', encoding='utf8')
     
     return file
+
+# Get int selection from the user
+def getIntInput(prompt, prompt2 = "Try again "):
+    selection = input(prompt)
+    try:
+        return int(selection)
+    except ValueError:
+        return getIntInput(prompt2, prompt2)
 
 # Create template text file #######################################################################
 def createTemplateTextFile(): 
@@ -336,5 +361,47 @@ def genDevotion(devotion):
 	result = result[:-1]
 	
 	return result
+
+# JSON editing ####################################################################################
+# Adds color to a JSON file for devotion data
+def addColorToJSONfile():
+    # Move to the devotion files directory
+    os.chdir("/Users/Joshua/Documents/_Hobbies/_Programming/Xcode/Extra_Files/UpperRoomTesting/AppResources/Devotion")
+    
+    # Find all json files
+    jsonFiles = os.listdir()
+    # Removes txt files
+    i = 0
+    while i < len(jsonFiles):
+        if jsonFiles[i].endswith(".txt"):
+            jsonFiles.remove(jsonFiles[i])
+        else:
+            i += 1
+       
+    # Sort in alphabetical order     
+    jsonFiles.sort()
+    
+    # List options & select
+    print("00 Home")
+    i = 1
+    for jsonFile in jsonFiles:
+        print(f"{withLeadingZeros(i, 2)} {jsonFile}")
+    userSelection = getIntInput("Select: ")
+    
+    # Return home (if selected)
+    if userSelection == 0:
+        main()
+    elif userSelection > len(jsonFiles):
+        print("Invalid input. Returning to home...")
+        main()
+    
+    # Select json file
+    jsonFileName = jsonFiles[userSelection - 1]
+    
+    # Load json file
+    jsonFile = open(jsonFileName, "+")
+    jsonFileContents = json.load(jsonFile)
+    
+    # Load color for file
 
 main()

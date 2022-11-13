@@ -16,6 +16,12 @@ Generates an output text file as a json file. This is meant to be easy to read a
 ### 3.2 Generate old format
 Generates an output text file in the old format. The old format has non-standard dividing characters, and is hard to interpret as a human. This output is kept just in case it is needed, but is not intended to be used frequently.
 
+## 4 JSON editing
+A set of processes used to edit and manage the devotion data json files.
+
+### 4.1 Add color to JSON file
+Adds color to the property list of a devotion data file (json format only) by looking at the color property in the monthProperties.json file.
+
 # Development
 ## Standard order of input data
 *last updated Nov. 12th, 2022*
