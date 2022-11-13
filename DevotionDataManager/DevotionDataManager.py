@@ -15,11 +15,6 @@ import unicodedata
 from datetime import datetime
 import time
 
-# Primary functions
-# 1 Create template text file
-# 2 Validate input text file
-# 3 Generate devotion data from input
-
 # Characters to remove
 characterBlacklist = ['　', '\n', '\r', ' ', u"\u000A", u"\u0009", u"\u2424", u"\u000D", u"\u23CE", u"\u240D", u"\u2B90", u"\u2B91", u"\u2B92", u"\u2B93", u"\u4DD7", u"\u0008", u"\u0020", u"\u00A0", u"\u1361", u"\u1680", u"\u2000", u"\u2002", u"\u2003", u"\u2004", u"\u2005", u"\u2006", u"\u2007", u"\u2008", u"\u2009", u"\u200A", u"\u200B", u"\u202F", u"\u205F", u"\u3000", u"\uFEFF", unicodedata.lookup("SPACE"), '\t']
 
