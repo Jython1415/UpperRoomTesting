@@ -386,6 +386,7 @@ def addColorToJSONfile():
     i = 1
     for jsonFile in jsonFiles:
         print(f"{withLeadingZeros(i, 2)} {jsonFile}")
+        i += 1
     userSelection = getIntInput("Select: ")
     
     # Return home (if selected)
