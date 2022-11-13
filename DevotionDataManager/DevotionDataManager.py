@@ -114,6 +114,13 @@ def createTextFile(name, folderPath=""):
     
     return file
 
+# Creates a json file with the input name (and input location)
+def createJSONFile(name, folderPath=""):
+    fileName = folderPath + "/" + name + "_" + datetime.now().strftime("%H-%M-%S") + ".json"
+    file = open(fileName, 'x', encoding='utf8')
+    
+    return file
+
 # Create template text file #######################################################################
 def createTemplateTextFile(): 
     month = int(input("What month is this for?\nInput as number: "))
@@ -304,7 +311,7 @@ def generateJSONfromInput():
     # jsonOutput = json.dumps(listOfDicts, indent=4, ensure_ascii=False).encode('utf8')
     
     # Add to result file
-    file = createTextFile(f"{year}-{withLeadingZeros(month,2)}", folderPath)
+    file = createJSONFile(f"{year}-{withLeadingZeros(month,2)}", folderPath)
     json.dump(listOfDicts, file, indent=4, ensure_ascii=False)
     file.close()
     
