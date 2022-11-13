@@ -50,7 +50,14 @@ def main():
     elif userSelection == "2":
         validateInputTextFile()
     elif userSelection == "3":
-        generateOldDevotionDataFromInput()
+        print("\n3.0 Back\n3.1 JSON Output\n3.2 Old Output (deprecated)")
+        userSelection = input("Select: ")
+        if userSelection == "0" or userSelection == "3.0":
+            main()
+        elif userSelection == "1" or userSelection == "3.1":
+            generateJSONfromInput()
+        elif userSelection == "2" or userSelection == "3.2":
+            generateOldDevotionDataFromInput()
 
 # Add leading zeros
 def withLeadingZeros(number, desiredNumOfDigits):
