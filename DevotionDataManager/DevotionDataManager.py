@@ -403,5 +403,25 @@ def addColorToJSONfile():
     jsonFileContents = json.load(jsonFile)
     
     # Load color for file
+    monthPropertiesFile = open("/Users/Joshua/Documents/_Hobbies/_Programming/Xcode/Extra_Files/UpperRoomTesting/DevotionDataManager/monthProperties.json", "r")
+    monthProperties = json.load(monthPropertiesFile)
+    monthPropertiesFile.close()
+    # Find correct month and color
+    inputYear = jsonFileName[0:4]
+    inputMonth = jsonFileName[5:7]
+    for month in monthProperties["months"]:
+        if month["year"] == inputYear and month["month"] == inputMonth:
+            color = month["textBackgroundColor"]
+    
+    # Add color property
+    for dev in jsonFileContents["devotions"]:
+        dev["textBackgroundColor"] = color
+    
+    # Rewrite json file
+    json.dump(jsonFileContents, jsonFile, indent=4, ensure_ascii=False)
+    jsonFile.close()
+    
+    # Confirmation message
+    print("Process completed")
 
 main()
