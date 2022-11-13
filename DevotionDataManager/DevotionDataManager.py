@@ -399,8 +399,9 @@ def addColorToJSONfile():
     jsonFileName = jsonFiles[userSelection - 1]
     
     # Load json file
-    jsonFile = open(jsonFileName, "+")
+    jsonFile = open(jsonFileName, "r")
     jsonFileContents = json.load(jsonFile)
+    jsonFile.close()
     
     # Load color for file
     monthPropertiesFile = open("/Users/Joshua/Documents/_Hobbies/_Programming/Xcode/Extra_Files/UpperRoomTesting/DevotionDataManager/monthProperties.json", "r")
@@ -418,6 +419,7 @@ def addColorToJSONfile():
         dev["textBackgroundColor"] = color
     
     # Rewrite json file
+    jsonFile = open(jsonFileName, "w")
     json.dump(jsonFileContents, jsonFile, indent=4, ensure_ascii=False)
     jsonFile.close()
     
