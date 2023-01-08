@@ -43,7 +43,7 @@
             "imgURL":"",
             "startMonth":5,
             "year":2022,
-            "fileSize":1350
+            "fileSize":1414885
         },
         {
             "url":"2022-0708.pdf",
@@ -51,7 +51,7 @@
             "imgURL":"",
             "startMonth":7,
             "year":2022,
-            "fileSize":1400
+            "fileSize":1467882
         },
         {
             "url":"2022-0910.pdf",
@@ -59,7 +59,15 @@
             "imgURL":"",
             "startMonth":9,
             "year":2022,
-            "fileSize":2007
+            "fileSize":2007079
+        },
+        {
+            "url":"2022-1112.pdf",
+            "title":"11・12月号 No.432",
+            "imgURL":"",
+            "startMonth":11,
+            "year":2022,
+            "fileSize":2117794
         }
     ]
 }
