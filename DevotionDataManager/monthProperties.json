@@ -24,6 +24,11 @@
             "year":"2022",
             "month":"11",
             "textBackgroundColor":"#e0e6ef"
+        },
+        {
+            "year":"2023",
+            "month":"06",
+            "textBackgroundColor":"#d4dde4"
         }
     ]
 }

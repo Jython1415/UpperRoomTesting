@@ -366,7 +366,7 @@ def genDevotion(devotion):
 # Adds color to a JSON file for devotion data
 def addColorToJSONfile():
     # Move to the devotion files directory
-    os.chdir("/Users/Joshua/Documents/_Hobbies/_Programming/Xcode/Extra_Files/UpperRoomTesting/AppResources/Devotion")
+    os.chdir("/Users/Joshua/Documents/_upper-room/_other/UpperRoomTesting/AppResources/Devotion")
     
     # Find all json files
     jsonFiles = os.listdir()
@@ -405,7 +405,7 @@ def addColorToJSONfile():
     jsonFile.close()
     
     # Load color for file
-    monthPropertiesFile = open("/Users/Joshua/Documents/_Hobbies/_Programming/Xcode/Extra_Files/UpperRoomTesting/DevotionDataManager/monthProperties.json", "r")
+    monthPropertiesFile = open("/Users/Joshua/Documents/_upper-room/_other/UpperRoomTesting/DevotionDataManager/monthProperties.json", "r")
     monthProperties = json.load(monthPropertiesFile)
     monthPropertiesFile.close()
     # Find correct month and color
