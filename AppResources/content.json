@@ -112,6 +112,30 @@
             "startMonth":11,
             "year":2022,
             "fileSize":2117794
+        },
+        {
+            "url":"2023-0102.pdf",
+            "title":"1・2月号 No.433",
+            "imgURL":"",
+            "startMonth":1,
+            "year":2023,
+            "fileSize":2657766
+        },
+        {
+            "url":"2023-0304.pdf",
+            "title":"3・4月号 No.434",
+            "imgURL":"",
+            "startMonth":3,
+            "year":2023,
+            "fileSize":2280343
+        },
+        {
+            "url":"2023-0506.pdf",
+            "title":"5・6月号 No.435",
+            "imgURL":"",
+            "startMonth":5,
+            "year":2023,
+            "fileSize":2075150
         }
     ]
 }
