@@ -1,5 +1,5 @@
 {
-    "updateDateAndTime":"2023-01-08, 16:02",
+    "updateDateAndTime":"2025-02-11, 16:02",
 
     "urlStem":"https://jython1415.github.io/UpperRoomTesting/",
     "devotionStem":"AppResources/Devotion/",
@@ -77,6 +77,18 @@
             "month":6,
             "year":2023,
             "fileSize":82048
+        },
+	{
+	    "url":"2025-01.json",
+            "month":1,
+            "year":2025,
+            "fileSize":81205
+        },
+        {
+            "url":"2025-02.json",
+            "month":2,
+            "year":2025,
+            "fileSize":75365
         }
     ],
 
