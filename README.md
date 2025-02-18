@@ -1,3 +1,3 @@
 # UpperRoomTesting
 
-Okay so this is the site then?
+Temporary repository for holding devotion data. Will be phased about ASAP.
