@@ -1,5 +1,5 @@
 {
-    "updateDateAndTime":"2025-02-11, 16:02",
+    "updateDateAndTime":"2025-02-18, 10:55",
 
     "urlStem":"https://jython1415.github.io/UpperRoomTesting/",
     "devotionStem":"AppResources/Devotion/",
@@ -78,8 +78,8 @@
             "year":2023,
             "fileSize":82048
         },
-	{
-	    "url":"2025-01.json",
+        {
+            "url":"2025-01.json",
             "month":1,
             "year":2025,
             "fileSize":81205
@@ -148,6 +148,14 @@
             "startMonth":5,
             "year":2023,
             "fileSize":2075150
+        },
+        {
+            "url":"2025-0102.pdf",
+            "title":"1・2月号 No.445",
+            "imgURL":"",
+            "startMonth":1,
+            "year":2025,
+            "fileSize":3694694
         }
     ]
 }
